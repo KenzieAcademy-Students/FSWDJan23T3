@@ -1,0 +1,19 @@
+{
+  "name": "auth_and_auth",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "server:dev": "npm run dev --workspace=server",
+    "dev": "concurrently --kill-others-on-fail \"npm run server:dev\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.2.1"
+  },
+  "workspaces": [
+    "server"
+  ]
+}
