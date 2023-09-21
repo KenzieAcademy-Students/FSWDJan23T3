@@ -69,7 +69,14 @@ export async function signIn(req, res, next) {
     };
     const accessToken = jwt.sign(tokenPayload, JWT_SECRET, { expiresIn: "7d" });
 
-    res.json({ token: accessToken });
+    res.json({
+      token: accessToken,
+      user: {
+        sub: user.id,
+        uname: user.username,
+        role: user.role,
+      },
+    });
   } catch (error) {
     console.log(error);
     res.sendStatus(500);

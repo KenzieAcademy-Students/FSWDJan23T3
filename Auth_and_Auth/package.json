@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "server:dev": "npm run dev --workspace=server",
-    "dev": "concurrently --kill-others-on-fail \"npm run server:dev\""
+    "client:dev": "npm run dev --workspace=client",
+    "dev": "concurrently --kill-others-on-fail \"npm run server:dev\" \"npm run client:dev\""
   },
   "keywords": [],
   "author": "",
@@ -14,6 +15,7 @@
     "concurrently": "^8.2.1"
   },
   "workspaces": [
-    "server"
+    "server",
+    "client"
   ]
 }
